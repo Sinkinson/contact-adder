@@ -14,7 +14,7 @@ This program uses Chrome as the default browser and will not work with other bro
   For example if you have `usr/local/bin` in your PATH you can use the following:
 
   ```
-  `$ mv ~/path/to/chromedriver /usr/local/bin`
+  $ mv ~/path/to/chromedriver /usr/local/bin
   ```
 * Run the command `chromedriver` from the command line to ensure it starts up successfully, close once confirmed.
 
