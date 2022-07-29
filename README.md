@@ -20,5 +20,5 @@ This program uses Chrome as the default browser and will not work with other bro
 
 3. Clone git repo
 4. `cd` into repo and run `npm install`
-5. Add `contacts.js` file to root of project
+5. Add `contacts.js` file to root of project (If your profile is within the list, please remove it.)
 6. Run `node adder.js` from the command line to execute the program
