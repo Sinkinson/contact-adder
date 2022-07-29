@@ -1,7 +1,7 @@
-import { createRequire } from "module";
+import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 
-const {Builder, By} = require('selenium-webdriver');
+const { Builder, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const rlSync = require('readline-sync');
 
@@ -19,7 +19,10 @@ function getCredentials() {
 
 async function startBrowser() {
   let options = new chrome.Options();
-  driver = await new Builder().setChromeOptions(options).forBrowser('chrome').build();
+  driver = await new Builder()
+    .setChromeOptions(options)
+    .forBrowser('chrome')
+    .build();
 }
 
 async function login() {
@@ -27,6 +30,7 @@ async function login() {
   await driver.findElement(By.id('login_field')).sendKeys(username);
   await driver.findElement(By.id('password')).sendKeys(password);
   await driver.findElement(By.name('commit')).click();
+  await driver.wait(until.elementLocated(By.id('global-nav')), 30000);
 }
 
 async function addContacts(contacts) {
@@ -35,7 +39,7 @@ async function addContacts(contacts) {
       await driver.get(`${baseUrl}${contact}`);
       const selector = "input[value='Follow'][class='btn btn-block']";
       let element = await driver.findElement(By.css(selector));
-      if (await element.isDisplayed() && await element.isEnabled()) {
+      if ((await element.isDisplayed()) && (await element.isEnabled())) {
         await element.click();
         console.log(`Added ${contact}`);
       }
@@ -43,7 +47,7 @@ async function addContacts(contacts) {
   } catch (error) {
     console.log(error);
   }
-  
+
   await driver.quit();
 }
 
