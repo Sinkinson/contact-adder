@@ -7,13 +7,15 @@ This program uses Chrome as the default browser and will not work with other bro
 * Check your version of Chrome and use the below link to install the correct browser driver.
 * [Drivers](https://www.selenium.dev/documentation/webdriver/getting_started/install_drivers/)
 
-2. Add the driver to your path
+2. Add the driver to your PATH
 
-* Guide in link above
+* Guide in the Drivers link above
 * You can equally move the driver to an existing directory already in your path once downloaded.
   For example if you have `usr/local/bin` in your PATH variable you can use the following:
+  ```
   `$ mv ~/path/to/chromedriver /usr/local/bin`
-* run the command `chromedriver` from the command line to ensure it starts up successfully, close once confirmed.
+  ```
+* Run the command `chromedriver` from the command line to ensure it starts up successfully, close once confirmed.
 
 3. Clone git repo
 4. `cd` into repo and run `npm install`
