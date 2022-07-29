@@ -11,7 +11,7 @@ This program uses Chrome as the default browser and will not work with other bro
 
 * Guide in the Drivers link above
 * You can equally move the driver to an existing directory already in your PATH.
-  For example if you have `usr/local/bin` in your PATH you can use the following:
+  For example if you have `usr/local/bin` in your PATH you can do the following:
 
   ```
   $ mv ~/path/to/chromedriver /usr/local/bin
